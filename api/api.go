@@ -151,6 +151,7 @@ func ResourceToMap(obj interface{}, schemas *client.Schemas) (map[string]interfa
 	schema := schemas.Schema(resourceType)
 	for k, v := range objMap {
 		_, ok := schema.CheckField(k)
+		ok = true
 		if !ok {
 			continue
 		}
